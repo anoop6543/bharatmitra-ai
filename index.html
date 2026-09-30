@@ -143,6 +143,58 @@ td.hl{color:var(--green);font-weight:600}
 .cta h2{color:var(--white);font-size:clamp(24px,3.4vw,36px)}
 .cta p{color:var(--muted);max-width:640px;margin:14px auto 26px}
 footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:13px;text-align:center}
+/* new sections: filters, benefits, progress, directory */
+.filterbar{display:flex;gap:8px;justify-content:center;margin-bottom:12px;flex-wrap:wrap}
+.filterbar button{background:var(--card);color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:8px 20px;font-size:14px;cursor:pointer}
+.filterbar button.active{background:rgba(47,210,122,.14);color:var(--green);border-color:var(--green)}
+.scenchips{max-height:172px;overflow-y:auto;padding:4px}
+.tabs{display:flex;gap:10px;justify-content:center;margin-bottom:26px;flex-wrap:wrap}
+.tabs button{background:var(--card);color:var(--muted);border:1px solid var(--line);border-radius:12px;padding:11px 26px;font-size:15px;cursor:pointer;font-weight:600}
+.tabs button.active{background:rgba(255,153,51,.14);color:var(--saffron);border-color:var(--saffron)}
+.bengrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:16px}
+.bencard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:8px;transition:transform .2s,border-color .2s}
+.bencard:hover{transform:translateY(-3px);border-color:var(--saffron)}
+.bencard .bic{font-size:30px}
+.bencard h3{color:var(--white);font-size:15.5px}
+.bencard p{color:var(--muted);font-size:13px;flex:1}
+.bstat{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+.bstat b{color:var(--white)}
+.bar{height:8px;background:#0a1730;border:1px solid var(--line);border-radius:99px;overflow:hidden;margin:4px 0}
+.bar div{height:100%;background:linear-gradient(90deg,var(--saffron),var(--green));border-radius:99px;transition:width 1s ease}
+.bpct{font-size:12px;color:var(--green);font-weight:700}
+.notebox{max-width:760px;margin:26px auto 0;background:rgba(255,153,51,.07);border:1px dashed rgba(255,153,51,.45);border-radius:12px;padding:14px 18px;color:var(--muted);font-size:13px;text-align:center}
+.secgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:900px){.secgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.secgrid{grid-template-columns:1fr}}
+.sector{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.sector .shead{font-size:16px;color:var(--white);margin-bottom:12px}
+.mrow{margin-bottom:12px}
+.mlab{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:4px}
+.mlab b{color:var(--white)}
+.dirtools{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;align-items:center;margin-bottom:12px}
+.dirsearch{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:11px 20px;color:var(--white);font-size:14px;min-width:min(320px,90vw)}
+.dirsearch::placeholder{color:var(--muted)}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg button{background:var(--card);color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:13px;cursor:pointer}
+.seg button.active{background:rgba(255,153,51,.14);color:var(--saffron);border-color:var(--saffron)}
+.legend{text-align:center;color:var(--muted);font-size:12.5px;margin-bottom:20px}
+.dirgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:16px}
+.dircard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px}
+.dhead{display:flex;gap:12px;align-items:center}
+.dic{width:44px;height:44px;border-radius:12px;background:rgba(255,153,51,.1);display:flex;align-items:center;justify-content:center;font-size:22px;flex:none}
+.dhead h3{color:var(--white);font-size:15.5px}
+.dhead small{color:var(--muted);font-size:12px}
+.dsec b{color:var(--saffron);font-size:12.5px;letter-spacing:.5px;text-transform:uppercase}
+.dsec ol{margin:6px 0 0 18px;color:var(--muted);font-size:13.5px}
+.dsec li{margin-bottom:4px}
+.drein{background:rgba(47,210,122,.06);border:1px dashed rgba(47,210,122,.4);border-radius:10px;padding:10px 12px;font-size:13px;color:var(--muted)}
+.drein b{color:var(--green)}
+.dfoot{margin-top:auto;padding-top:4px}
+.phbadge{display:inline-block;background:rgba(147,167,201,.1);border:1px dashed var(--muted);color:var(--muted);border-radius:8px;padding:8px 14px;font-size:13px}
+.btn.sm{padding:9px 18px;font-size:13px}
+.nores{text-align:center;color:var(--muted);padding:30px}
+:focus-visible{outline:2px solid var(--saffron);outline-offset:2px;border-radius:6px}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.001s!important}}
 </style>
 </head>
 <body>
@@ -154,11 +206,13 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-s
       BharatMitra AI
     </a>
     <div class="links">
-      <a href="#demo">Live demo</a>
-      <a href="#features">Features</a>
-      <a href="#how">How it works</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#vs">vs America.gov</a>
+      <a href="#demo" data-i18n="nav_demo">Live demo</a>
+      <a href="#business" data-i18n="nav_business">Business</a>
+      <a href="#benefits" data-i18n="nav_benefits">Benefits</a>
+      <a href="#progress" data-i18n="nav_progress">Progress</a>
+      <a href="#directory" data-i18n="nav_directory">Directory</a>
+      <a href="#roadmap" data-i18n="nav_roadmap">Roadmap</a>
+      <a href="#vs" data-i18n="nav_vs">vs America.gov</a>
     </div>
   </div>
 </nav>
@@ -174,7 +228,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-s
     </div>
     <div class="stats">
       <div class="stat"><b><span class="count" data-to="22">0</span>+</b><span>languages, voice + text</span></div>
-      <div class="stat"><b><span class="count" data-to="3">0</span></b><span>demo scenarios, trilingual</span></div>
+      <div class="stat"><b><span class="count" data-to="25">0</span></b><span>demo scenarios, trilingual</span></div>
       <div class="stat"><b><span class="count" data-to="0">0</span></b><span>office visits · intermediaries</span></div>
       <div class="stat"><b><span class="count" data-to="100">0</span>%</b><span>audit-chained decisions</span></div>
     </div>
@@ -187,11 +241,12 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-s
       <h2>Watch one query do the work of entire departments</h2>
       <p>Pick a real-life scenario. BharatMitra verifies identity, fetches issued documents, files across Centre and State — and auto-clears. Switch languages; the service graph is identical. <b style="color:var(--saffron)">🎙 Tap the mic and speak your own query</b>, or 🔊 hear the assistant reply.</p>
     </div>
-    <div class="scenchips" id="scenchips">
-      <button data-scen="food" class="active">🍢 <span data-i18n="scen_food">Food-stall licences</span></button>
-      <button data-scen="income">🧾 <span data-i18n="scen_income">Income certificate</span></button>
-      <button data-scen="dl">🪪 <span data-i18n="scen_dl">DL renewal</span></button>
+    <div class="filterbar" id="demoFilters">
+      <button data-f="all" class="active" data-i18n="filter_all">All (25)</button>
+      <button data-f="citizen" data-i18n="filter_citizen">👤 Citizens</button>
+      <button data-f="business" data-i18n="filter_business">🏢 Businesses</button>
     </div>
+    <div class="scenchips" id="scenchips"></div>
     <div class="langbar">
       <button data-lang="te" class="active">తెలుగు</button>
       <button data-lang="hi">हिन्दी</button>
@@ -389,9 +444,13 @@ en:{
   }
 }};
 </script>
+<script src="data/demos.js"></script>
+<script src="data/services.js"></script>
+<script src="data/impact.js"></script>
 <script>
 /* ============ demo engine ============ */
-let lang='te', scen='food', timers=[], ttsOn=false, playedOnce=false;
+let lang='te', scen='food', timers=[], ttsOn=false, playedOnce=false,
+    demoFilter='all', benTab='centre', dirQ='', dirA='all', dirL='all';
 const chat=document.getElementById('chat'), stepsEl=document.getElementById('steps'),
       auditEl=document.getElementById('audit'), fake=document.getElementById('fakeinput'),
       micbtn=document.getElementById('micbtn');
@@ -406,10 +465,12 @@ function addCard(title,rows,note){const d=document.createElement('div');d.classN
     `<div class="row"><div class="ico">${r[0]}</div><div><b style="color:var(--white)">${r[1]}</b><br><small>${r[2]}</small></div></div>`).join('')+
     `<small>${note}</small>`;chat.appendChild(d);scrollChat()}
 function addAudit(x){const d=document.createElement('div');d.className='aentry';d.innerHTML='⛓ '+x;auditEl.appendChild(d)}
-function renderSteps(){stepsEl.innerHTML=T[lang][scen].steps.map((s,i)=>
-  `<div class="step" id="stp${i}"><div class="t"><span id="dot${i}">○</span><span><b style="color:var(--white)">${s.t}</b><br><small style="color:var(--muted)">${s.s}</small></span><span class="st" id="stt${i}">queued</span></div><div class="n">${s.n}</div></div>`).join('')}
+function curDemo(){return DEMOS.find(d=>d.id===scen)||DEMOS[0]}
+function curSteps(){return curDemo().steps.map(s=>({n:s.n[lang],f:s.f[lang],s:s.s[lang]}))}
+function renderSteps(){stepsEl.innerHTML=curSteps().map((s,i)=>
+  `<div class="step" id="stp${i}"><div class="t"><span id="dot${i}">○</span><span><b style="color:var(--white)">${s.n}</b><br><small style="color:var(--muted)">${s.f}</small></span><span class="st" id="stt${i}">queued</span></div><div class="n">${s.s}</div></div>`).join('')}
 async function runOrch(){
-  const n=T[lang][scen].steps.length;
+  const n=curSteps().length;
   for(let i=0;i<n;i++){
     const el=document.getElementById('stp'+i);el.classList.add('on');
     document.getElementById('dot'+i).innerHTML='<span class="spinner"></span>';
@@ -420,29 +481,30 @@ async function runOrch(){
     document.getElementById('stt'+i).textContent='approved ✓';
   }
 }
+function phash(s){let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))>>>0;return h.toString(16).slice(0,4)+'…'+(h%65536).toString(16).padStart(4,'0')}
 function buildScript(customQuery){
-  const L=T[lang], S=L[scen];
+  const L=T[lang], D=curDemo();
+  const h1=phash(D.id+'a3f9'), h2=phash(D.id+'7be1'), h3=phash(D.id+'91cc');
   return [
-    {k:'user', x: customQuery || S.query},
-    {k:'bot', x: S.intro},
+    {k:'user', x: customQuery || D.query[lang]},
+    {k:'bot', x: D.intro[lang]},
     {k:'card', title:L.authTitle, rows:[L.authRow], note:L.authNote},
-    {k:'audit', x:"<b>a3f9…c21d</b> — Aadhaar auth (face) · consent logged"},
+    {k:'audit', x:`<b>${h1}</b> — Aadhaar auth (face) · consent logged`},
     {k:'bot', x: L.docsMsg},
     {k:'card', title:L.docsTitle, rows:L.docsRows, note:L.docsNote},
-    {k:'audit', x:"<b>7be1…09aa</b> — DigiLocker fetch (3 issued docs)"},
-    {k:'bot', x: S.filing},
+    {k:'audit', x:`<b>${h2}</b> — DigiLocker fetch (issued docs)`},
+    {k:'bot', x: D.filing[lang]},
     {k:'orch'},
-    {k:'bot', x: S.done},
-    {k:'card', title:S.certTitle, rows:S.certRows, note:S.certNote},
-    ...S.audits.map(x=>({k:'audit', x}))
+    {k:'bot', x: D.done[lang]},
+    {k:'card', title:'🎉 '+D.chip[lang], rows:D.certs.map(c=>[c.i,c.t[lang],c.s[lang]]), note:L.cert_note},
+    {k:'audit', x:`<b>${h3}</b> — ${curSteps().length} approvals auto-cleared · zero human touch`},
+    {k:'audit', x:`<b>${h1}</b> — certificates issued to DigiLocker ⛓ chained`}
   ];
 }
 async function play(customQuery){
   clearTimers();chat.innerHTML='';auditEl.innerHTML='';renderSteps();
   fake.textContent=T[lang].input;
-  document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const k=el.dataset.i18n; if(T[lang][k]) el.textContent=T[lang][k];
-  });
+  applyI18n();
   await wait(600);
   for(const s of buildScript(customQuery)){
     if(s.k==='user'){addMsg('user',s.x);await wait(900)}
@@ -455,16 +517,28 @@ async function play(customQuery){
     else if(s.k==='audit'){addAudit(s.x);await wait(450)}
     else if(s.k==='orch'){await runOrch();await wait(600)}
   }
-  addMsg('sys','✨ Demo complete — try another scenario or language, or read the full proposal below.');
+  addMsg('sys',T[lang].demo_sys);
 }
 /* controls */
+function renderChips(){
+  const box=document.getElementById('scenchips');box.innerHTML='';
+  DEMOS.filter(d=>demoFilter==='all'||d.cat===demoFilter).forEach(d=>{
+    const b=document.createElement('button');b.type='button';
+    b.innerHTML=d.icon+' <span>'+d.chip[lang]+'</span>';
+    b.setAttribute('aria-label',d.chip[lang]);
+    if(d.id===scen)b.classList.add('active');
+    b.addEventListener('click',()=>{scen=d.id;renderChips();play();});
+    box.appendChild(b);
+  });
+}
+function renderDynamic(){renderChips();renderBenefits();renderProgress();renderDirectory();}
 document.querySelectorAll('.langbar button[data-lang]').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('.langbar button[data-lang]').forEach(x=>x.classList.remove('active'));
-  b.classList.add('active');lang=b.dataset.lang;play();
+  b.classList.add('active');lang=b.dataset.lang;applyI18n();renderDynamic();play();
 }));
-document.querySelectorAll('#scenchips button').forEach(b=>b.addEventListener('click',()=>{
-  document.querySelectorAll('#scenchips button').forEach(x=>x.classList.remove('active'));
-  b.classList.add('active');scen=b.dataset.scen;play();
+document.querySelectorAll('#demoFilters button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('#demoFilters button').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');demoFilter=b.dataset.f;renderChips();
 }));
 document.getElementById('replay').addEventListener('click',()=>play());
 document.getElementById('ttsbtn').addEventListener('click',function(){
@@ -492,7 +566,133 @@ const cio=new IntersectionObserver(es=>{es.forEach(e=>{if(!e.isIntersecting)retu
   (function tick(t){const p=Math.min(1,(t-t0)/1200);e.target.textContent=Math.round(to*p);if(p<1)requestAnimationFrame(tick)})(t0);
 })},{threshold:.5});
 document.querySelectorAll('.count').forEach(el=>cio.observe(el));
+/* ============ data-driven sections ============ */
+Object.assign(T.te,{demo_sys:"✨ డెమో పూర్తయింది — మరో సందర్భాన్ని లేదా భాషను ప్రయత్నించండి, లేదా కింద పూర్తి ప్రతిపాదన చదవండి.",cert_note:"సర్టిఫికెట్లు మీ డిజిలాకర్‌లో భద్రపరిచాను — QR స్కాన్‌తో ఎక్కడైనా ధృవీకరించవచ్చు."});
+Object.assign(T.hi,{demo_sys:"✨ डेमो पूर्ण — कोई अन्य परिदृश्य या भाषा आज़माएँ, या नीचे पूर्ण प्रस्ताव पढ़ें।",cert_note:"प्रमाणपत्र आपके डिजिलॉकर में सहेज दिए — QR स्कैन से कहीं भी सत्यापित करें।"});
+Object.assign(T.en,{demo_sys:"✨ Demo complete — try another scenario or language, or read the full proposal below.",cert_note:"Certificates saved to your DigiLocker — verifiable anywhere by QR scan."});
+for(const l of['te','hi','en']){delete T[l].food;delete T[l].income;delete T[l].dl;delete T[l].scen_food;delete T[l].scen_income;delete T[l].scen_dl;}
+function applyI18n(){
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(T[lang][k])el.textContent=T[lang][k];});
+  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{const k=el.getAttribute('data-i18n-ph');if(T[lang][k])el.placeholder=T[lang][k];});
+}
+function renderBenefits(){
+  const L=T[lang], box=document.getElementById('benCards');if(!box)return;
+  document.getElementById('tabCentre').classList.toggle('active',benTab==='centre');
+  document.getElementById('tabState').classList.toggle('active',benTab==='state');
+  box.innerHTML=BENEFITS.filter(b=>b.tab===benTab).map(b=>
+   `<div class="bencard"><div class="bic">${b.icon}</div><h3>${b.name}</h3><p>${b.desc[lang]}</p>
+    <div class="bstat"><span>${L.ben_ben}</span><b>${b.ben}</b></div>
+    <div class="bstat"><span>${L.ben_disb}</span><b>${b.disb}</b></div>
+    <div class="bar"><div style="width:${b.pct}%"></div></div><div class="bpct">${b.pct}%</div>
+    <div>${b.url?`<a class="btn ghost sm" href="${b.url}" target="_blank" rel="noopener">${L.ben_track}</a>`:`<span class="phbadge">${L.ben_soon}</span>`}</div>
+    </div>`).join('');
+}
+function renderProgress(){
+  const L=T[lang], ts=document.getElementById('topstrip'), sg=document.getElementById('sectors');
+  if(!ts||!sg)return;
+  ts.innerHTML=TOPMETRICS.map(m=>`<div class="stat"><b>${m.v}</b><span>${L[m.l]}</span></div>`).join('');
+  sg.innerHTML=SECTORS.map(s=>
+   `<div class="sector"><div class="shead">${s.icon} <b>${s.name[lang]}</b></div>`+
+   s.metrics.map(m=>`<div class="mrow"><div class="mlab"><span>${m.label[lang]}</span><b>${m.val}</b></div><div class="bar"><div style="width:${m.pct}%"></div></div></div>`).join('')+
+   `</div>`).join('');
+}
+function renderDirectory(){
+  const L=T[lang], box=document.getElementById('dirCards');if(!box)return;
+  const q=dirQ.trim().toLowerCase();
+  const list=SERVICES.filter(s=>
+    (dirA==='all'||s.cat===dirA)&&(dirL==='all'||s.level===dirL)&&
+    (!q||(s.name.en+' '+s.name.te+' '+s.name.hi+' '+s.dept.en+' '+s.dept.te).toLowerCase().includes(q)));
+  box.innerHTML=list.length?list.map(s=>
+   `<div class="dircard">
+     <div class="dhead"><div class="dic">${s.icon}</div><div><h3>${s.name[lang]}</h3><small>${s.dept[lang]} · ${s.level==='centre'?L.dir_l_centre:L.dir_l_state}</small></div></div>
+     <div class="dsec"><b>${L.dir_how}</b><ol>${s.steps.map(x=>`<li>${x[lang]}</li>`).join('')}</ol></div>
+     <div class="drein">✨ <b>${L.dir_reinvent}:</b> ${s.reinvent[lang]}</div>
+     <div class="dfoot">${s.url?`<a class="btn ghost sm" href="${s.url}" target="_blank" rel="noopener">${L.dir_visit}</a>`:`<span class="phbadge">${L.dir_soon}</span>`}</div>
+    </div>`).join(''):`<p class="nores">${L.dir_noresult}</p>`;
+}
+document.getElementById('tabCentre').addEventListener('click',()=>{benTab='centre';renderBenefits();});
+document.getElementById('tabState').addEventListener('click',()=>{benTab='state';renderBenefits();});
+document.getElementById('dirSearch').addEventListener('input',e=>{dirQ=e.target.value;renderDirectory();});
+document.querySelectorAll('#dirAud button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('#dirAud button').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');dirA=b.dataset.a;renderDirectory();
+}));
+document.querySelectorAll('#dirLvl button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('#dirLvl button').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');dirL=b.dataset.l;renderDirectory();
+}));
+applyI18n();renderDynamic();
 </script>
+
+<section id="business">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker" data-i18n="biz_kicker">🏢 For businesses</span>
+      <h2 data-i18n="biz_h">Doing business shouldn't be a permit chase</h2>
+      <p data-i18n="biz_sub">From company formation to government tenders — every business service in one conversation.</p>
+    </div>
+    <div class="feats">
+      <div class="feat"><div class="ic">🪟</div><h3 data-i18n="biz_c1t">Single-window clearances</h3><p data-i18n="biz_c1d"></p></div>
+      <div class="feat"><div class="ic">⚡</div><h3 data-i18n="biz_c2t">Deemed approvals</h3><p data-i18n="biz_c2d"></p></div>
+      <div class="feat"><div class="ic">🔗</div><h3 data-i18n="biz_c3t">MCA + GSTN + labour — one flow</h3><p data-i18n="biz_c3d"></p></div>
+      <div class="feat"><div class="ic">🏪</div><h3 data-i18n="biz_c4t">GeM — the government as customer</h3><p data-i18n="biz_c4d"></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="benefits" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker" data-i18n="ben_kicker">💰 Benefits tracker</span>
+      <h2 data-i18n="ben_h">Every rupee — to whom, where, when</h2>
+      <p data-i18n="ben_sub">Benefit distribution across central and state schemes.</p>
+    </div>
+    <div class="tabs">
+      <button id="tabCentre" class="active" data-i18n="ben_centre">🇮🇳 Centre</button>
+      <button id="tabState" data-i18n="ben_state">🏛️ States</button>
+    </div>
+    <div class="bengrid" id="benCards"></div>
+    <p class="notebox" data-i18n="ben_note"></p>
+  </div>
+</section>
+
+<section id="progress">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker" data-i18n="prog_kicker">📊 National progress</span>
+      <h2 data-i18n="prog_h">Sector by sector — where the country stands</h2>
+      <p data-i18n="prog_sub">Service status in every sector, on one dashboard.</p>
+    </div>
+    <div class="stats" id="topstrip" style="margin-top:0"></div>
+    <div class="secgrid" id="sectors" style="margin-top:26px"></div>
+    <p class="notebox" data-i18n="prog_note"></p>
+  </div>
+</section>
+
+<section id="directory" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker" data-i18n="dir_kicker">📚 Service directory</span>
+      <h2 data-i18n="dir_h">Every government service — in one place</h2>
+      <p data-i18n="dir_sub">25 key services for citizens and businesses.</p>
+    </div>
+    <div class="dirtools">
+      <input id="dirSearch" class="dirsearch" data-i18n-ph="dir_search" placeholder="Search services…" aria-label="Search services">
+      <div class="seg" id="dirAud">
+        <button data-a="all" class="active" data-i18n="dir_a_all">All</button>
+        <button data-a="citizen" data-i18n="dir_a_citizen">👤 Citizens</button>
+        <button data-a="business" data-i18n="dir_a_business">🏢 Businesses</button>
+      </div>
+      <div class="seg" id="dirLvl">
+        <button data-l="all" class="active" data-i18n="dir_l_all">All levels</button>
+        <button data-l="centre" data-i18n="dir_l_centre">🇮🇳 Centre</button>
+        <button data-l="state" data-i18n="dir_l_state">🏛️ State</button>
+      </div>
+    </div>
+    <p class="legend" data-i18n="dir_note"></p>
+    <div class="dirgrid" id="dirCards"></div>
+  </div>
+</section>
 
 <section id="features">
   <div class="wrap">

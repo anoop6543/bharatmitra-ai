@@ -74,9 +74,16 @@ No backend — so the frontend carries the full vision. Try these:
 
 1. **🎙 Speak your query** — tap the mic and talk; the demo runs your words through the whole flow (Chrome recommended).
 2. **🔊 Hear it reply** — toggle voice replies; the assistant speaks back in Telugu, Hindi, or English via your browser's TTS.
-3. **🔀 Switch scenarios** — food-stall licences (Centre + State orchestration), income certificate (record auto-matching), DL renewal (UPI fee + issuance).
+3. **🔀 25 simulated scenarios** — browse all 25 demo chips, or filter 👤 Citizens (17: food-stall approvals, income certificate, DL renewal, passport, Aadhaar update, ration card, pension, scholarship, PM-KISAN, Ayushman, e-Shram, birth & caste certificates, land records, ITR, PF, voter ID) and 🏢 Businesses (8: company incorporation, GST, Udyam, FSSAI, Startup India, GeM, IEC, Shops & Establishments). Every scenario is a **simulated concept flow** — approvals, timings and certificates shown are illustrative, not real.
 4. **🌐 Switch languages** — తెలుగు / हिन्दी / English; the service graph is identical in all three.
 5. **⚙ Watch the machinery** — the "behind the scenes" panel animates every API step, and the hash-chained audit trail builds live.
+
+Plus, all new in this release:
+
+- **🏢 Business hub** — single-window clearances, deemed approvals, MCA+GSTN+labour in one flow, GeM procurement.
+- **💰 Benefits tracker** — Centre/States tabs across 10 major schemes (PM-KISAN, Ayushman, PMAY, MGNREGA, NSAP, PMMVY, Rythu Bharosa, Aasara, Talliki Vandanam, Annadata Sukhibhava). **All figures are illustrative sample data, not official statistics** — the cards link out to the real portals for actual numbers.
+- **📊 National progress dashboard** — top-line concept metrics plus six sector cards (agriculture, health, education, MSME, digital, welfare), each with three tracked indicators. Illustrative data, clearly labeled.
+- **📚 Service directory** — 25 real government services with **verified official links** (✅), step-by-step "how to do it" guidance, and a "reinvented with BharatMitra" note for each. Where an official URL could not be verified (MeeSeva, T App Folio), the entry shows a clearly marked **🔗 placeholder — the URL is never guessed**.
 
 Plus: the complete 12-feature vision grid, the six-layer explainer, the architecture diagram, an 18-month roadmap, and the head-to-head comparison — all in one page.
 
@@ -121,6 +128,10 @@ Plus: the complete 12-feature vision grid, the six-layer explainer, the architec
 ```
 bharatmitra-ai/
 ├── index.html                  # Interactive demo (static — no build step)
+├── data/
+│   ├── demos.js                # 25 trilingual simulated demo scenarios
+│   ├── services.js             # 25 directory entries (verified links + placeholders)
+│   └── impact.js               # Benefits/sector data (illustrative) + T2 UI strings
 ├── assets/
 │   └── architecture.svg        # System architecture diagram
 ├── docs/
@@ -132,6 +143,15 @@ bharatmitra-ai/
 ```
 
 **Run locally:** no build step — open `index.html`, or `python3 -m http.server 8000`.
+
+---
+
+## 🔗 Data & linking policy
+
+- **Verified links only.** Every directory/benefits link was checked against an official government source before publishing. `✅` = verified official link.
+- **Placeholders, never guesses.** Where a URL could not be verified (currently MeeSeva and T App Folio), the entry shows a `🔗` placeholder badge — "Official URL verification pending" — and no URL is invented.
+- **Illustrative data, labeled.** Benefits-tracker and progress-dashboard figures are sample data for the demo visualisation, marked **"Illustrative concept data — not official statistics"** in the UI. They exist to show what the dashboard *would* look like; real numbers live on the linked portals.
+- **Representative catalog.** The 25-entry directory is a representative verified catalog for this static demo; a production system would federate authoritative service registries rather than hard-code links.
 
 ---
 
