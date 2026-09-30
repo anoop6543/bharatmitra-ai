@@ -195,6 +195,71 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-s
 .nores{text-align:center;color:var(--muted);padding:30px}
 :focus-visible{outline:2px solid var(--saffron);outline-offset:2px;border-radius:6px}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.001s!important}}
+/* suraksha */
+.protgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:34px}
+.protcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.protcard .pic{font-size:32px}
+.protcard h3{color:var(--white);font-size:16.5px}
+.protcard .ptag{color:var(--saffron);font-size:13.5px;font-weight:600}
+.protcard p{color:var(--muted);font-size:13.5px}
+.protcard .phow b{color:var(--saffron);font-size:12px;letter-spacing:.5px;text-transform:uppercase}
+.protcard .phow ol{margin:6px 0 0 18px;color:var(--muted);font-size:13px}
+.protcard .phow li{margin-bottom:4px}
+.rails{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.rail{font-size:11.5px;background:rgba(47,210,122,.08);border:1px solid rgba(47,210,122,.3);color:var(--green);border-radius:99px;padding:4px 10px}
+.simbox{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;margin-bottom:34px}
+.simbox h3{color:var(--white);font-size:17px;margin-bottom:6px}
+.simbox>p{color:var(--muted);font-size:13.5px;margin-bottom:16px}
+.simrow{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.siminput{background:#0a1730;border:1px solid var(--line);border-radius:10px;padding:12px 16px;color:var(--white);font-size:14px;min-width:min(300px,90vw)}
+.simlog{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+.simstep{background:#0a1730;border:1px solid var(--line);border-left:3px solid var(--saffron);border-radius:8px;padding:10px 14px;font-size:13.5px;color:var(--muted);animation:fadein .4s ease}
+.simstep b{color:var(--white)}
+.simstep.good{border-left-color:var(--green)}
+.simstep.bad{border-left-color:#e5484d}
+@keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.verdict{border-radius:12px;padding:16px 18px;margin-top:12px;font-size:14px}
+.verdict.high{background:rgba(229,72,77,.1);border:1px solid #e5484d}
+.verdict.med{background:rgba(255,153,51,.1);border:1px solid var(--saffron)}
+.verdict.low{background:rgba(47,210,122,.1);border:1px solid var(--green)}
+.verdict h4{margin-bottom:8px;font-size:16px}
+.verdict ul{margin:6px 0 6px 18px;color:var(--muted);font-size:13.5px}
+.verdict li{margin-bottom:4px}
+.scamgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.scamcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+.scamcard .sic{font-size:26px;margin-bottom:6px}
+.scamcard h4{color:var(--white);font-size:14.5px;margin-bottom:8px}
+.scamcard .ssign{font-size:13px;color:var(--muted);margin-bottom:8px}
+.scamcard .ssign b{color:#e5484d;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+.scamcard .sdo{font-size:13px;color:var(--muted)}
+.scamcard .sdo b{color:var(--green);font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+/* paathshala */
+.trackgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-bottom:30px}
+.trackcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;text-align:center}
+.trackcard .tic{font-size:30px;margin-bottom:8px}
+.trackcard h4{color:var(--white);font-size:14.5px;margin-bottom:6px}
+.trackcard p{color:var(--muted);font-size:13px}
+.lessongrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.lesson{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.lesson .lic{font-size:30px}
+.lesson h3{color:var(--white);font-size:16px}
+.lesson .lsum{color:var(--muted);font-size:13.5px}
+.lesson .lpoints b{color:var(--saffron);font-size:12px;letter-spacing:.5px;text-transform:uppercase}
+.lesson .lpoints ul{margin:6px 0 0 18px;color:var(--muted);font-size:13.5px}
+.lesson .lpoints li{margin-bottom:5px}
+.lbtns{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+.quiz{margin-top:6px;border-top:1px dashed var(--line);padding-top:12px;display:none}
+.quiz.open{display:block}
+.quiz .qq{color:var(--white);font-size:14px;margin-bottom:10px;font-weight:600}
+.qopt{display:block;width:100%;text-align:left;background:#0a1730;border:1px solid var(--line);color:var(--muted);border-radius:10px;padding:10px 14px;font-size:13.5px;margin-bottom:8px;cursor:pointer}
+.qopt:hover{border-color:var(--saffron);color:var(--white)}
+.qopt.right{border-color:var(--green);color:var(--green)}
+.qopt.wrong{border-color:#e5484d;color:#e5484d}
+.qwhy{font-size:13px;color:var(--muted);margin-top:8px;display:none}
+.qwhy.show{display:block}
+.qwhy b{color:var(--saffron)}
+.scoreline{text-align:center;color:var(--muted);font-size:13.5px;margin-top:22px}
+.scoreline b{color:var(--saffron);font-size:17px}
 </style>
 </head>
 <body>
@@ -211,6 +276,8 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-s
       <a href="#benefits" data-i18n="nav_benefits">Benefits</a>
       <a href="#progress" data-i18n="nav_progress">Progress</a>
       <a href="#directory" data-i18n="nav_directory">Directory</a>
+      <a href="#protect" data-i18n="nav_protect">🛡️ Suraksha</a>
+      <a href="#learn" data-i18n="nav_learn">📚 Paathshala</a>
       <a href="#roadmap" data-i18n="nav_roadmap">Roadmap</a>
       <a href="#vs" data-i18n="nav_vs">vs America.gov</a>
     </div>
@@ -447,6 +514,8 @@ en:{
 <script src="data/demos.js"></script>
 <script src="data/services.js"></script>
 <script src="data/impact.js"></script>
+<script src="data/protect.js"></script>
+<script src="data/learn.js"></script>
 <script>
 /* ============ demo engine ============ */
 let lang='te', scen='food', timers=[], ttsOn=false, playedOnce=false,
@@ -531,7 +600,105 @@ function renderChips(){
     box.appendChild(b);
   });
 }
-function renderDynamic(){renderChips();renderBenefits();renderProgress();renderDirectory();}
+/* ============ Suraksha Kavach ============ */
+function renderProtect(){
+  const L=T[lang], box=document.getElementById('protCards');if(!box)return;
+  box.innerHTML=PROTECTIONS.map(p=>
+   `<div class="protcard"><div class="pic">${p.icon}</div><h3>${p.name[lang]}</h3>
+    <div class="ptag">${p.tag[lang]}</div><p>${p.desc[lang]}</p>
+    <div class="phow"><b>${L.sur_how}</b><ol>${p.steps.map(s=>`<li>${s[lang]}</li>`).join('')}</ol></div>
+    <div><b style="color:var(--green);font-size:12px;letter-spacing:.5px;text-transform:uppercase">${L.sur_rails}</b>
+    <div class="rails">${p.rails.map(r=>`<span class="rail">${r}</span>`).join('')}</div></div>
+    </div>`).join('');
+  const sc=document.getElementById('scamCards');
+  sc.innerHTML=SCAM_TYPES.map(s=>
+   `<div class="scamcard"><div class="sic">${s.icon}</div><h4>${s.name[lang]}</h4>
+    <div class="ssign"><b>${L.scam_sign}</b><br>${s.sign[lang]}</div>
+    <div class="sdo"><b>${L.scam_advice}</b><br>${s.do[lang]}</div></div>`).join('');
+}
+const SCAM_RULES=[
+ {re:/rbi|kyc|bank|sbi|hdfc|icici|axis|pnb/i, t:1},
+ {re:/lottery|lottry|prize|winner|reward/i, t:4},
+ {re:/refund|cashback|collect/i, t:2},
+ {re:/customer.?care|helpline|support/i, t:3},
+ {re:/loan|credit/i, t:5},
+ {re:/otp|password|pin|verify/i, t:0}
+];
+function simSay(box,html,cls){const d=document.createElement('div');d.className='simstep '+(cls||'');d.innerHTML=html;box.appendChild(d);box.scrollTop=box.scrollHeight;}
+document.getElementById('scamBtn').addEventListener('click',()=>{
+  const L=T[lang], box=document.getElementById('scamLog'), v=document.getElementById('scamInput').value.trim();
+  box.innerHTML='';
+  if(!v){simSay(box,'⚠️ '+L.scam_ph);return;}
+  const matched=SCAM_RULES.filter(r=>r.re.test(v)).map(r=>SCAM_TYPES[r.t]);
+  const isPhone=/^\+?\d[\d\s-]{9,}$/.test(v);
+  let level, cls;
+  if(matched.length){level=L.scam_high;cls='high';}
+  else if(isPhone||/https?:|bit\.ly|tinyurl/i.test(v)){level=L.scam_med;cls='med';}
+  else{level=L.scam_low;cls='low';}
+  const uniq=[...new Map(matched.map(s=>[s.name.en,s])).values()];
+  const flags=uniq.length?uniq.map(s=>`<li><b>${s.name[lang]}</b> — ${s.sign[lang]}</li>`).join('')
+    :`<li>${cls==='med'?L.scam_sub:L.scam_low}</li>`;
+  const advice=uniq.length?uniq.map(s=>`<li>${s.do[lang]}</li>`).join(''):`<li>${L.scam_advice}: ${L.sur_sim}</li>`;
+  box.innerHTML=`<div class="verdict ${cls}"><h4>${level}</h4>
+    <b>${L.scam_flag}:</b><ul>${flags}</ul>
+    <b>${L.scam_advice}:</b><ul>${advice}</ul>
+    <button class="btn ghost sm" id="rep1930">${L.scam_report}</button></div>`;
+  document.getElementById('rep1930').addEventListener('click',()=>{
+    simSay(box,'✅ '+L.scam_reported,'good');
+  });
+});
+document.getElementById('landBtn').addEventListener('click',()=>{
+  const L=T[lang], box=document.getElementById('landLog');
+  const sv=document.getElementById('landInput').value.trim()||'123/A';
+  box.innerHTML='';
+  const steps=[[L.land_s1+' <b>'+sv+'</b>',''],[L.land_s2,''],[L.land_s3,''],[L.land_s4,'good'],[L.land_s5,'good']];
+  steps.forEach((s,i)=>setTimeout(()=>simSay(box,s[0],s[1]),i*1100));
+});
+/* ============ Paathshala ============ */
+let quizScore=0, quizAnswered=0;
+function speakLesson(text){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang={te:'te-IN',hi:'hi-IN',en:'en-IN'}[lang];u.rate=0.85;speechSynthesis.speak(u);}catch(e){}}
+function renderLearn(){
+  const L=T[lang];
+  const tk=document.getElementById('trackCards');if(!tk)return;
+  tk.innerHTML=TRACKS.map(t=>`<div class="trackcard"><div class="tic">${t.icon}</div><h4>${t.name[lang]}</h4><p>${t.desc[lang]}</p></div>`).join('');
+  const lc=document.getElementById('lessonCards');
+  lc.innerHTML=LESSONS.map((ls,i)=>{
+    const tr=TRACKS[ls.track];
+    return `<div class="lesson"><div class="lic">${ls.icon}</div><h3>${ls.title[lang]}</h3>
+    <div class="lsum">${tr.icon} ${tr.name[lang]} · ${ls.sum[lang]}</div>
+    <div class="lpoints"><b>${L.learn_points}</b><ul>${ls.points.map(p=>`<li>${p[lang]}</li>`).join('')}</ul></div>
+    <div class="lbtns">
+      <button class="btn ghost sm" data-listen="${i}">${L.learn_listen}</button>
+      <button class="btn ghost sm" data-quiz="${i}">${L.learn_quiz}</button>
+    </div>
+    <div class="quiz" id="quiz-${i}">
+      <div class="qq">${L.learn_q}: ${ls.quiz.q[lang]}</div>
+      ${ls.quiz.opts.map((o,j)=>`<button class="qopt" data-q="${i}" data-o="${j}">${o[lang]}</button>`).join('')}
+      <div class="qwhy" id="why-${i}"><b>${L.learn_why}:</b> ${ls.quiz.why[lang]}</div>
+    </div></div>`;
+  }).join('');
+  lc.querySelectorAll('[data-listen]').forEach(b=>b.addEventListener('click',()=>{
+    const ls=LESSONS[+b.dataset.listen];
+    speakLesson(ls.title[lang]+'. '+ls.sum[lang]+'. '+ls.points.map(p=>p[lang]).join('. '));
+  }));
+  lc.querySelectorAll('[data-quiz]').forEach(b=>b.addEventListener('click',()=>{
+    document.getElementById('quiz-'+b.dataset.quiz).classList.toggle('open');
+  }));
+  lc.querySelectorAll('.qopt').forEach(b=>b.addEventListener('click',()=>{
+    const i=+b.dataset.q, j=+b.dataset.o, ls=LESSONS[i], L2=T[lang];
+    const box=document.getElementById('quiz-'+i);
+    if(box.dataset.done)return; box.dataset.done='1';
+    quizAnswered++;
+    const opts=box.querySelectorAll('.qopt');
+    opts[ls.quiz.ans].classList.add('right');
+    if(j===ls.quiz.ans){quizScore++;simSay(box,'<b>'+L2.learn_correct+'</b>','good');}
+    else{b.classList.add('wrong');simSay(box,'<b>'+L2.learn_wrong+'</b>','bad');}
+    document.getElementById('why-'+i).classList.add('show');
+    document.getElementById('quizScore').textContent=quizScore;
+    document.getElementById('quizTotal').textContent=quizAnswered;
+  }));
+}
+function renderDynamic(){renderChips();renderBenefits();renderProgress();renderDirectory();renderProtect();renderLearn();}
 document.querySelectorAll('.langbar button[data-lang]').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('.langbar button[data-lang]').forEach(x=>x.classList.remove('active'));
   b.classList.add('active');lang=b.dataset.lang;applyI18n();renderDynamic();play();
@@ -570,6 +737,8 @@ document.querySelectorAll('.count').forEach(el=>cio.observe(el));
 Object.assign(T.te,{demo_sys:"✨ డెమో పూర్తయింది — మరో సందర్భాన్ని లేదా భాషను ప్రయత్నించండి, లేదా కింద పూర్తి ప్రతిపాదన చదవండి.",cert_note:"సర్టిఫికెట్లు మీ డిజిలాకర్‌లో భద్రపరిచాను — QR స్కాన్‌తో ఎక్కడైనా ధృవీకరించవచ్చు."});
 Object.assign(T.hi,{demo_sys:"✨ डेमो पूर्ण — कोई अन्य परिदृश्य या भाषा आज़माएँ, या नीचे पूर्ण प्रस्ताव पढ़ें।",cert_note:"प्रमाणपत्र आपके डिजिलॉकर में सहेज दिए — QR स्कैन से कहीं भी सत्यापित करें।"});
 Object.assign(T.en,{demo_sys:"✨ Demo complete — try another scenario or language, or read the full proposal below.",cert_note:"Certificates saved to your DigiLocker — verifiable anywhere by QR scan."});
+for(const [k,v] of Object.entries(T3))for(const l of["te","hi","en"])T[l][k]=v[l];
+for(const [k,v] of Object.entries(T4))for(const l of["te","hi","en"])T[l][k]=v[l];
 for(const l of['te','hi','en']){delete T[l].food;delete T[l].income;delete T[l].dl;delete T[l].scen_food;delete T[l].scen_income;delete T[l].scen_dl;}
 function applyI18n(){
   document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(T[lang][k])el.textContent=T[lang][k];});
@@ -691,6 +860,64 @@ applyI18n();renderDynamic();
     </div>
     <p class="legend" data-i18n="dir_note"></p>
     <div class="dirgrid" id="dirCards"></div>
+  </div>
+</section>
+
+<section id="protect">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker" data-i18n="sur_kicker">🛡️ Suraksha Kavach</span>
+      <h2 data-i18n="sur_h">Your assets — under your control</h2>
+      <p data-i18n="sur_sub">Land, money, identity — protected from fraud, on India Stack rails.</p>
+    </div>
+    <div class="protgrid" id="protCards"></div>
+
+    <div class="simbox">
+      <h3 data-i18n="scam_h">🚨 Scam Radar — check before you pay</h3>
+      <p data-i18n="scam_sub"></p>
+      <div class="simrow">
+        <input id="scamInput" class="siminput" data-i18n-ph="scam_ph" placeholder="e.g. rbi-kyc-update@upi or 98XXXXXXXX" aria-label="UPI ID, phone or link to check">
+        <button class="btn" id="scamBtn" data-i18n="scam_btn">Check risk</button>
+      </div>
+      <div class="simlog" id="scamLog" aria-live="polite"></div>
+    </div>
+
+    <div class="simbox">
+      <h3 data-i18n="land_h">🏠 Land Vault simulator</h3>
+      <p data-i18n="land_sub"></p>
+      <div class="simrow">
+        <input id="landInput" class="siminput" data-i18n-ph="land_ph" placeholder="Survey no. e.g. 123/A" aria-label="Survey number">
+        <button class="btn" id="landBtn" data-i18n="land_btn">Turn Freeze on &amp; test</button>
+      </div>
+      <div class="simlog" id="landLog" aria-live="polite"></div>
+    </div>
+
+    <div class="sec-head" style="margin-top:10px">
+      <h2 data-i18n="scam_types_h" style="font-size:22px">The 6 most common frauds — recognise them</h2>
+    </div>
+    <div class="scamgrid" id="scamCards"></div>
+    <p class="notebox" data-i18n="sur_sim" style="margin-top:26px">Simulated concept</p>
+  </div>
+</section>
+
+<section id="learn" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker" data-i18n="learn_kicker">📚 Paathshala</span>
+      <h2 data-i18n="learn_h">Money matters — in your language</h2>
+      <p data-i18n="learn_sub"></p>
+    </div>
+    <p class="notebox" data-i18n="learn_audio_note" style="margin:0 auto 26px"></p>
+    <div class="sec-head" style="margin-top:6px">
+      <h2 data-i18n="learn_tracks_h" style="font-size:22px">Choose your track</h2>
+    </div>
+    <div class="trackgrid" id="trackCards"></div>
+    <div class="sec-head" style="margin-top:10px">
+      <h2 data-i18n="learn_lessons_h" style="font-size:22px">Lessons</h2>
+    </div>
+    <div class="lessongrid" id="lessonCards"></div>
+    <p class="scoreline"><span data-i18n="learn_score">Score</span>: <b id="quizScore">0</b> / <span id="quizTotal">0</span></p>
+    <p class="notebox" data-i18n="learn_review" style="margin-top:18px"></p>
   </div>
 </section>
 

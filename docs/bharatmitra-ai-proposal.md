@@ -131,7 +131,28 @@ Federalism is the reason India must go beyond America.gov's single-government de
 
 ---
 
-## 10. The Ask
+## 10. Suraksha Kavach & Paathshala — Protecting Assets, Building Literacy
+
+Service delivery is only half the mission. India's financial-literacy gap — from wealthy to poor, and worst among the elderly and rural citizens — makes ordinary people prey for fraud and silent victims of missing paperwork. BharatMitra therefore ships two citizen-protection missions on the same rails:
+
+### 10.1 Suraksha Kavach (protection shield)
+
+- **Land Vault (Bhoo-Suraksha):** Aadhaar-linked registration of survey numbers via Dharani / MeeBhoomi / state registries. Any sale, mortgage, or mutation attempt triggers an instant alert in the citizen's language; an optional **Freeze** means no registration completes without the owner's live biometric consent — killing impersonation fraud against the elderly. Built on Dharani/MeeBhoomi, the CERSAI security-interest registry, Aadhaar face authentication, and DigiLocker deeds.
+- **Account Shield (Dhan-Suraksha):** a consent-based single dashboard of all bank accounts via the RBI's **Account Aggregator** framework. Learns normal patterns; alerts on large debits, new payees, or SIM-change + UPI activity. Citizens may nominate a **trusted contact** (alerted, never given control) and seniors get a 24-hour cooling period on new beneficiaries plus big-text, slow-voice confirmations.
+- **Scam Radar:** "verify before you pay" — check any UPI ID, phone number, or link against reported-fraud databases; learn the 12 most common fraud playbooks as 30-second audio stories in the citizen's language; one-tap reporting to the **1930 National Cyber Helpline** with details auto-filled. Built with Sanchar Saathi (DoT) data and Bhashini.
+- **Vaaris (nominee & heir helper):** scans accounts, deposits, policies, and EPF for missing nominees — the single biggest cause of post-death family hardship — then guides e-nomination in the citizen's language and prepares legal-heir / succession certificate flows.
+
+### 10.2 Paathshala (financial literacy in rural languages)
+
+Audio-first, 2–3 minute lessons in every scheduled language (Telugu/Hindi/English first), organized into tracks — **Seniors (60+)**, **Rural first-time users**, **Women & SHG members**, **Youth**. Launch curriculum: OTP = your signature; UPI safety; nominees; interest & compounding; insurance vs. investment; the KYC/customer-care fraud playbook; government safety nets (PMSBY, PMJJBY, APY); reading your land record (pahani/khata). Every lesson ends with a one-question quiz; a weekly "scam story" in the citizen's language keeps the whole family alert.
+
+### 10.3 Why this belongs in the national proposal
+
+Fraud losses and land disputes are a **governance** problem, not just a consumer problem — they destroy trust in digital India itself. A sovereign assistant that only *delivers* services but doesn't *protect* the citizen's assets and *teach* in her language leaves the most vulnerable behind. Suraksha Kavach and Paathshala reuse the same six-layer architecture (Section 4.2): no new stack, only new missions.
+
+---
+
+## 11. The Ask
 
 1. **PMO / Government of India:** issue a national directive establishing BharatMitra AI as the unified AI front door for citizen services, with a binding integration timeline — India's answer to America's 29 September executive order, but transactional from launch and sovereign by design.
 2. **Government of Telangana and Government of Andhra Pradesh:** sign on as the two pilot states — expose priority departmental APIs, co-design the Telugu-first conversational rollout, and demonstrate centre-state orchestration for the country.

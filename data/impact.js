@@ -70,7 +70,7 @@ dir_soon:{te:"🔗 ధృవీకరించిన లింక్ త్వ�
 dir_noresult:{te:"సేవ కనబడలేదు — వేరే పదంతో ప్రయత్నించండి.",hi:"सेवा नहीं मिली — अन्य शब्द से प्रयास करें।",en:"No service found — try another term."},
 dir_note:{te:"✅ = ధృవీకరించిన అధికారిక లింక్ · 🔗 = లింక్ ప్లేస్‌హోల్డర్ (URL ధృవీకరించబడలేదు, ఊహించలేదు).",hi:"✅ = सत्यापित आधिकारिक लिंक · 🔗 = लिंक प्लेसहोल्डर (URL सत्यापित नहीं, अनुमान नहीं)।",en:"✅ = verified official link · 🔗 = link placeholder (URL not verified, never guessed)."}
 };
-for(const l of["te","hi","en"])Object.assign(T[l],T2[l]);
+for(const [k,v] of Object.entries(T2))for(const l of["te","hi","en"])T[l][k]=v[l];
 
 /* ---------- benefits data (ILLUSTRATIVE) ---------- */
 window.BENEFITS=[

@@ -84,6 +84,8 @@ Plus, all new in this release:
 - **💰 Benefits tracker** — Centre/States tabs across 10 major schemes (PM-KISAN, Ayushman, PMAY, MGNREGA, NSAP, PMMVY, Rythu Bharosa, Aasara, Talliki Vandanam, Annadata Sukhibhava). **All figures are illustrative sample data, not official statistics** — the cards link out to the real portals for actual numbers.
 - **📊 National progress dashboard** — top-line concept metrics plus six sector cards (agriculture, health, education, MSME, digital, welfare), each with three tracked indicators. Illustrative data, clearly labeled.
 - **📚 Service directory** — 25 real government services with **verified official links** (✅), step-by-step "how to do it" guidance, and a "reinvented with BharatMitra" note for each. Where an official URL could not be verified (MeeSeva, T App Folio), the entry shows a clearly marked **🔗 placeholder — the URL is never guessed**.
+- **🛡️ Suraksha Kavach** — citizen asset protection on India Stack rails: **Land Vault** (Aadhaar-linked survey-number watch with biometric-consent freeze), **Account Shield** (Account Aggregator dashboard with trusted-contact alerts and senior cooling periods), **Scam Radar** (check any UPI ID/phone/link + 6 common fraud playbooks), **Vaaris** (nominee & succession helper). Includes two working simulators — scam-risk check and land-freeze — both clearly labeled simulated concepts.
+- **📚 Paathshala** — audio-first financial literacy in Telugu/Hindi/English: 4 tracks (Seniors 60+, Rural first-time users, Women & SHG, Youth), 8 lessons (OTP safety, UPI rules, nominees, compounding, insurance vs investment, KYC fraud, PMSBY/PMJJBY/APY, reading land records), each with key points, listen-aloud, and a quiz with live score.
 
 Plus: the complete 12-feature vision grid, the six-layer explainer, the architecture diagram, an 18-month roadmap, and the head-to-head comparison — all in one page.
 
@@ -131,7 +133,9 @@ bharatmitra-ai/
 ├── data/
 │   ├── demos.js                # 25 trilingual simulated demo scenarios
 │   ├── services.js             # 25 directory entries (verified links + placeholders)
-│   └── impact.js               # Benefits/sector data (illustrative) + T2 UI strings
+│   ├── impact.js               # Benefits/sector data (illustrative) + T2 UI strings
+│   ├── protect.js              # Suraksha Kavach: 4 protection features, 6 fraud types + T3 UI strings
+│   └── learn.js                # Paathshala: 4 tracks, 8 lessons with quizzes + T4 UI strings
 ├── assets/
 │   └── architecture.svg        # System architecture diagram
 ├── docs/
@@ -152,6 +156,7 @@ bharatmitra-ai/
 - **Placeholders, never guesses.** Where a URL could not be verified (currently MeeSeva and T App Folio), the entry shows a `🔗` placeholder badge — "Official URL verification pending" — and no URL is invented.
 - **Illustrative data, labeled.** Benefits-tracker and progress-dashboard figures are sample data for the demo visualisation, marked **"Illustrative concept data — not official statistics"** in the UI. They exist to show what the dashboard *would* look like; real numbers live on the linked portals.
 - **Representative catalog.** The 25-entry directory is a representative verified catalog for this static demo; a production system would federate authoritative service registries rather than hard-code links.
+- **Language quality.** Telugu and Hindi content in the demo, lessons, and protection flows is draft quality — fluent-speaker review is required before calling it native-polished. (The Paathshala section carries this notice in the UI as well.)
 
 ---
 
