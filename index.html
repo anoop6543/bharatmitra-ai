@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BharatMitra AI — One Query. Every Government Service.</title>
+<meta name="description" content="Concept demo: BharatMitra AI — India's sovereign, transactional AI front door for citizen services. One voice/text query in 22+ languages, Aadhaar-verified, DigiLocker-powered, auto-cleared.">
+<style>
+:root{
+  --bg:#0a1428; --bg2:#0e1c36; --card:#122544; --card2:#162c4f;
+  --line:#24406e; --saffron:#ff9933; --green:#2fd27a; --white:#f4f7ff;
+  --muted:#93a7c9; --ink:#eaf0fb;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:'Segoe UI',system-ui,-apple-system,Roboto,'Noto Sans',sans-serif;line-height:1.6}
+a{color:var(--saffron)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(10,20,40,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:var(--white);text-decoration:none}
+.brand svg{width:30px;height:30px}
+nav .links a{color:var(--muted);text-decoration:none;margin-left:22px;font-size:14px}
+nav .links a:hover{color:var(--white)}
+/* hero */
+.hero{padding:84px 0 60px;text-align:center;background:radial-gradient(700px 320px at 50% -60px,rgba(255,153,51,.16),transparent),radial-gradient(700px 320px at 85% 10px,rgba(47,210,122,.10),transparent)}
+.kicker{display:inline-block;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--saffron);border:1px solid var(--line);padding:6px 14px;border-radius:999px;margin-bottom:22px;background:rgba(255,153,51,.06)}
+.hero h1{font-size:clamp(34px,5.4vw,58px);line-height:1.15;font-weight:800;color:var(--white)}
+.hero h1 .tri{background:linear-gradient(90deg,#ff9933 20%,#f4f7ff 50%,#2fd27a 80%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.sub{max-width:720px;margin:20px auto 0;color:var(--muted);font-size:17px}
+.cta-row{margin-top:30px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 28px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;cursor:pointer;border:none}
+.btn.primary{background:linear-gradient(135deg,#ff9933,#ff7a1a);color:#1a0e00}
+.btn.ghost{background:transparent;color:var(--white);border:1px solid var(--line)}
+.btn.ghost:hover{border-color:var(--saffron)}
+.stats{display:flex;gap:14px;justify-content:center;margin-top:44px;flex-wrap:wrap}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 26px;min-width:150px}
+.stat b{display:block;font-size:26px;color:var(--white)}
+.stat span{font-size:12.5px;color:var(--muted)}
+/* sections */
+section{padding:70px 0}
+.sec-head{text-align:center;margin-bottom:38px}
+.sec-head h2{font-size:clamp(26px,3.6vw,38px);color:var(--white);font-weight:800}
+.sec-head p{color:var(--muted);max-width:640px;margin:12px auto 0}
+/* demo */
+.demo-grid{display:grid;grid-template-columns:minmax(300px,400px) 1fr;gap:26px;align-items:start}
+@media(max-width:900px){.demo-grid{grid-template-columns:1fr}}
+.langbar{display:flex;gap:8px;justify-content:center;margin-bottom:16px}
+.langbar button{background:var(--card);color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:8px 18px;font-size:14px;cursor:pointer}
+.langbar button.active{background:rgba(255,153,51,.14);color:var(--saffron);border-color:var(--saffron)}
+.phone{background:#050b18;border:1px solid var(--line);border-radius:34px;padding:14px;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.screen{background:var(--bg2);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;height:560px}
+.chat-head{background:linear-gradient(135deg,#1b3a6b,#122544);padding:14px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line)}
+.avatar{width:40px;height:40px;border-radius:50%;background:conic-gradient(#ff9933,#f4f7ff,#2fd27a,#ff9933);display:flex;align-items:center;justify-content:center;font-weight:800;color:#0a1428}
+.chat-head b{color:var(--white);font-size:15px;display:block}
+.chat-head small{color:var(--green);font-size:12px}
+#chat{flex:1;overflow-y:auto;padding:16px 14px;display:flex;flex-direction:column;gap:10px}
+.msg{max-width:85%;padding:10px 14px;border-radius:16px;font-size:14px;line-height:1.5;animation:pop .3s ease}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.msg.user{align-self:flex-end;background:linear-gradient(135deg,#ff9933,#ff7a1a);color:#1a0e00;border-bottom-right-radius:4px}
+.msg.bot{align-self:flex-start;background:var(--card2);border:1px solid var(--line);color:var(--ink);border-bottom-left-radius:4px}
+.msg.sys{align-self:center;background:rgba(47,210,122,.08);border:1px dashed rgba(47,210,122,.4);color:var(--green);font-size:12.5px;text-align:center;max-width:95%}
+.cardmsg{align-self:stretch;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:13.5px}
+.cardmsg .row{display:flex;align-items:center;gap:10px;margin:6px 0}
+.cardmsg .ico{width:30px;height:30px;border-radius:9px;background:rgba(47,210,122,.12);display:flex;align-items:center;justify-content:center;font-size:16px;flex:none}
+.cardmsg small{color:var(--muted)}
+.pill{display:inline-block;background:rgba(47,210,122,.14);color:var(--green);border-radius:999px;padding:2px 10px;font-size:12px;margin:2px 4px 2px 0}
+.typing{align-self:flex-start;background:var(--card2);border:1px solid var(--line);border-radius:16px;padding:12px 16px;display:flex;gap:5px}
+.typing span{width:7px;height:7px;border-radius:50%;background:var(--muted);animation:blink 1.2s infinite}
+.typing span:nth-child(2){animation-delay:.2s}.typing span:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,60%,100%{opacity:.25}30%{opacity:1}}
+.chat-input{padding:12px 14px;border-top:1px solid var(--line);display:flex;gap:10px;align-items:center}
+.chat-input .fake{flex:1;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:10px 16px;color:var(--muted);font-size:13.5px}
+.mic{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#ff9933,#ff7a1a);display:flex;align-items:center;justify-content:center;font-size:18px;flex:none}
+/* behind the scenes */
+.bts{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.bts h3{color:var(--white);font-size:17px;margin-bottom:4px}
+.bts .hint{color:var(--muted);font-size:13px;margin-bottom:18px}
+.step{border:1px solid var(--line);border-radius:12px;padding:13px 15px;margin-bottom:10px;background:var(--bg2);opacity:.45;transition:all .4s}
+.step.on{opacity:1;border-color:var(--saffron)}
+.step.done{opacity:1;border-color:var(--green)}
+.step .t{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--white)}
+.step .st{margin-left:auto;font-size:12px;color:var(--muted);flex:none}
+.step.done .st{color:var(--green)}
+.step .n{font-size:12px;color:var(--muted);margin-top:4px}
+.spinner{width:16px;height:16px;border:2px solid var(--line);border-top-color:var(--saffron);border-radius:50%;animation:spin .8s linear infinite;flex:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+.check{color:var(--green);font-weight:800;flex:none}
+.audit{margin-top:18px;border-top:1px solid var(--line);padding-top:16px}
+.audit h4{color:var(--white);font-size:14px;margin-bottom:10px}
+.aentry{font-family:ui-monospace,Consolas,monospace;font-size:11.5px;color:var(--muted);background:#0a1730;border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin-bottom:6px;animation:pop .3s ease}
+.aentry b{color:var(--green)}
+.replay{margin-top:16px;width:100%}
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:900px){.cards{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.cards{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+.card .n{font-size:13px;color:var(--saffron);font-weight:700;letter-spacing:1px}
+.card h3{color:var(--white);font-size:17px;margin:8px 0}
+.card p{color:var(--muted);font-size:14px}
+/* arch */
+.arch{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;text-align:center}
+.arch img{max-width:100%;height:auto}
+/* table */
+.cmp{overflow-x:auto;border:1px solid var(--line);border-radius:16px}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:640px}
+th,td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:var(--card2);color:var(--white)}
+td{color:var(--muted)}
+td:first-child{color:var(--white);font-weight:600}
+tr:last-child td{border-bottom:none}
+td.hl{color:var(--green);font-weight:600}
+/* cta + footer */
+.cta{background:linear-gradient(135deg,rgba(255,153,51,.12),rgba(47,210,122,.08));border:1px solid var(--line);border-radius:20px;padding:48px 30px;text-align:center}
+.cta h2{color:var(--white);font-size:clamp(24px,3.4vw,36px)}
+.cta p{color:var(--muted);max-width:640px;margin:14px auto 26px}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:13px;text-align:center}
+.disclaimer{font-size:12px;color:var(--muted);opacity:.75;text-align:center;margin-top:26px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="none" stroke="#ff9933" stroke-width="3"/><circle cx="16" cy="16" r="7" fill="none" stroke="#f4f7ff" stroke-width="2.5"/><circle cx="16" cy="16" r="2.4" fill="#2fd27a"/></svg>
+      BharatMitra AI
+    </a>
+    <div class="links">
+      <a href="#demo">Live demo</a>
+      <a href="#how">How it works</a>
+      <a href="#arch">Architecture</a>
+      <a href="#vs">vs America.gov</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="kicker">Concept demo &bull; Sovereign Intelligence for India Stack</span>
+    <h1>One query.<br><span class="tri">Every government service.</span></h1>
+    <p class="sub">BharatMitra AI is a national SI chatbot that takes a citizen's voice or text query in any of 22+ languages — and <b style="color:var(--white)">completes the work</b>: Aadhaar-verified, DigiLocker-powered, orchestrated across Centre and State, auto-cleared where rules suffice. No forms. No offices. No intermediaries. No bribes.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="#demo">▶ Try the live demo</a>
+      <a class="btn ghost" href="docs/bharatmitra-ai-proposal.pdf">Read the proposal (PDF)</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>22+</b><span>languages, voice + text</span></div>
+      <div class="stat"><b>4 min</b><span>3 approvals in the demo</span></div>
+      <div class="stat"><b>0</b><span>office visits · intermediaries</span></div>
+      <div class="stat"><b>100%</b><span>audit-chained decisions</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="demo">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Watch one query do the work of three departments</h2>
+      <p>A street vendor wants to start a food stall. Watch BharatMitra verify, fetch, file and clear — across the Centre and the State — in a single conversation. Switch languages; the service graph is the same.</p>
+    </div>
+    <div class="langbar">
+      <button data-lang="te" class="active">తెలుగు</button>
+      <button data-lang="hi">हिन्दी</button>
+      <button data-lang="en">English</button>
+    </div>
+    <div class="demo-grid">
+      <div class="phone">
+        <div class="screen">
+          <div class="chat-head">
+            <div class="avatar">భా</div>
+            <div><b>BharatMitra AI</b><small>● Sovereign · Online</small></div>
+          </div>
+          <div id="chat"></div>
+          <div class="chat-input">
+            <div class="fake" id="fakeinput">Type or speak…</div>
+            <div class="mic">🎙</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="bts">
+          <h3>⚙ Behind the scenes — live orchestration</h3>
+          <div class="hint">Every step the chatbot takes on the national service bus, as it happens.</div>
+          <div id="steps"></div>
+          <div class="audit">
+            <h4>⛓ Immutable audit trail <small style="color:var(--muted);font-weight:400">(hash-chained)</small></h4>
+            <div id="audit"></div>
+          </div>
+        </div>
+        <button class="btn primary replay" id="replay">↻ Replay demo</button>
+        <p class="disclaimer">Concept demo with simulated data. No real Aadhaar, DigiLocker or departmental systems are touched.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Six layers. Zero discretion where rules suffice.</h2>
+      <p>The architecture proposed to the PMO, Telangana and Andhra Pradesh — Telangana &amp; AP as pilot states.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="n">01 · SI CORE</div><h3>Sovereign Intelligence</h3><p>BharatGen-class model trained and hosted in India. Data residency at home — no foreign commercial model in the loop, unlike America.gov's Gemini + Grok.</p></div>
+      <div class="card"><div class="n">02 · LANGUAGE</div><h3>Bhashini × UMANG</h3><p>Voice + text in all 22 scheduled languages. UMANG's service catalogue becomes conversational intents — speak, don't fill forms.</p></div>
+      <div class="card"><div class="n">03 · INTEGRATION</div><h3>NSWS service bus, extended</h3><p>Central ministries + state departments expose standard APIs. One query fans out across Centre, State and local bodies as a single workflow.</p></div>
+      <div class="card"><div class="n">04 · IDENTITY</div><h3>Aadhaar + DigiLocker</h3><p>e-KYC per risk level; documents auto-fetched as issued records. The citizen never uploads what the state already issued.</p></div>
+      <div class="card"><div class="n">05 · AUTOMATION</div><h3>Auto-clearance of routine cases</h3><p>Criteria fully met → deemed approval within SLA. Human officers handle only exceptions, appeals and genuinely discretionary calls.</p></div>
+      <div class="card"><div class="n">06 · TRUST</div><h3>Audit + SI safety monitoring</h3><p>Hash-chained audit trail for every decision; hallucination guards, red-teaming, confidence-gated human escalation, published incident reports.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="arch">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>System architecture</h2>
+      <p>How one citizen query flows through the stack — and where the trust guarantees sit.</p>
+    </div>
+    <div class="arch"><img src="assets/architecture.svg" alt="BharatMitra AI system architecture diagram"></div>
+  </div>
+</section>
+
+<section id="vs" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Why it beats America.gov</h2>
+      <p>The US launched its AI front door on 29 Sept 2026. India can open a better one.</p>
+    </div>
+    <div class="cmp">
+      <table>
+        <tr><th>Dimension</th><th>America.gov (USA)</th><th>BharatMitra AI (proposed)</th></tr>
+        <tr><td>Capability at launch</td><td>Information only; transactions from 2027</td><td class="hl">Transactional from day one</td></tr>
+        <tr><td>Intelligence</td><td>Foreign commercial models (Gemini, Grok)</td><td class="hl">Sovereign Intelligence, hosted in India</td></tr>
+        <tr><td>Languages</td><td>3 (voice)</td><td class="hl">22+ scheduled languages</td></tr>
+        <tr><td>Identity</td><td>Login.gov (future)</td><td class="hl">Aadhaar + national SSO (universal today)</td></tr>
+        <tr><td>Documents</td><td>Citizen uploads PDFs</td><td class="hl">DigiLocker issued docs, auto-fetched</td></tr>
+        <tr><td>Integration</td><td>Federal agencies only</td><td class="hl">Centre + States + local via NSWS APIs</td></tr>
+        <tr><td>Discretion removal</td><td>Not addressed</td><td class="hl">Auto-clearance + immutable audit</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta">
+      <h2>The stack is built. The moment is now.</h2>
+      <p>The full proposal asks the PMO for a national mandate on the lines of the US executive order — and Telangana &amp; Andhra Pradesh to sign on as the two pilot states proving centre-state orchestration first.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="docs/bharatmitra-ai-proposal.pdf">Read the full proposal</a>
+        <a class="btn ghost" href="https://github.com/anoop6543/bharatmitra-ai">★ Star on GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    BharatMitra AI — a citizen concept demo for strengthening India Stack · Prepared by Viswa Anoop Nerella · Sept 2026<br>
+    <span style="opacity:.7">Not affiliated with the Government of India. Simulated data only.</span>
+  </div>
+</footer>
+
+<script>
+const L = {
+te:{
+  input:"మాట్లాడండి లేదా టైప్ చేయండి…",
+  steps:[
+    {t:"FSSAI బేసిక్ రిజిస్ట్రేషన్",s:"ఆహార భద్రత · కేంద్రం",n:"ఆటో-క్లియర్ — అన్ని నిబంధనలు నెరవేరాయి"},
+    {t:"ట్రేడ్ లైసెన్స్",s:"మున్సిపల్ కార్పొరేషన్ · రాష్ట్రం",n:"ఆటో-క్లియర్ — అన్ని నిబంధనలు నెరవేరాయి"},
+    {t:"ఉద్యమ్ రిజిస్ట్రేషన్",s:"MSME · కేంద్రం",n:"ఆటో-క్లియర్ — అన్ని నిబంధనలు నెరవేరాయి"}
+  ],
+  script:[
+    {k:"user",x:"మా ఊరి దగ్గర చిన్న ఫుడ్ స్టాల్ పెట్టాలనుకుంటున్నాను. ఏం చేయాలి?"},
+    {k:"bot",x:"నమస్తే! నేను భారతమిత్ర. మీ FSSAI రిజిస్ట్రేషన్, మున్సిపల్ ట్రేడ్ లైసెన్స్, ఉద్యమ్ రిజిస్ట్రేషన్ — మూడింటినీ ఒకేసారి చేస్తాను. ముందుగా చిన్న ఆధార్ ధృవీకరణ."},
+    {k:"card",title:"🪪 ఆధార్ ధృవీకరించబడింది",rows:[["👤","ఫేస్ అథెంటికేషన్","0.8 సెకన్లలో పూర్తి"]],note:"పాస్‌వర్డ్ లేదు. OTP టైప్ చేయాల్సిన అవసరం లేదు."},
+    {k:"audit",x:"<b>a3f9…c21d</b> — Aadhaar auth (face) · consent logged"},
+    {k:"bot",x:"ధృవీకరించబడింది. డిజిలాకర్ నుండి మీ వివరాలు తీసుకున్నాను — అప్‌లోడ్ చేయాల్సిన అవసరం లేదు, జిరాక్స్‌లు అక్కర్లేదు."},
+    {k:"card",title:"📂 డిజిలాకర్ నుండి తీసుకోబడింది",rows:[["🪪","ఆధార్","ధృవీకరించబడింది"],["🧾","పాన్","జారీ చేయబడిన రికార్డు"],["🏠","చిరునామా రుజువు","జారీ చేయబడిన రికార్డు"]],note:"జారీ చేసిన పత్రాలే — నకిలీకి ఆస్కారం లేదు."},
+    {k:"audit",x:"<b>7be1…09aa</b> — DigiLocker fetch (3 issued docs)"},
+    {k:"bot",x:"కేంద్రం + రాష్ట్రం — 3 దరఖాస్తులు ఇప్పుడే వేస్తున్నాను…"},
+    {k:"orch"},
+    {k:"bot",x:"అయిపోయింది! 4 నిమిషాల 12 సెకన్లలో 3 అనుమతులు. ఆఫీసు చుట్టూ తిరగాల్సిన అవసరం లేదు, మధ్యవర్తులు లేరు, లంచం అడిగే చోటే లేదు. సర్టిఫికెట్లు మీ డిజిలాకర్‌లో భద్రపరిచాను."},
+    {k:"card",title:"🎉 3 అనుమతులు మంజూరు",rows:[["✅","FSSAI బేసిక్ రిజిస్ట్రేషన్","డీమ్డ్ అనుమతి"],["✅","మున్సిపల్ ట్రేడ్ లైసెన్స్","డీమ్డ్ అనుమతి"],["✅","ఉద్యమ్ రిజిస్ట్రేషన్","డీమ్డ్ అనుమతి"]],note:"మానవ జోక్యం సున్నా — నిబంధనలు నెరవేరిన చోట ఆటో-క్లియర్."},
+    {k:"audit",x:"<b>f00d…44b2</b> — 3 applications filed (Centre + State)"},
+    {k:"audit",x:"<b>91cc…7e30</b> — Deemed approval ×3 · zero human touch"},
+    {k:"audit",x:"<b>c5a2…1f9d</b> — Certificates issued to DigiLocker"}
+  ]
+},
+hi:{
+  input:"बोलें या टाइप करें…",
+  steps:[
+    {t:"FSSAI बेसिक पंजीकरण",s:"खाद्य सुरक्षा · केंद्र",n:"ऑटो-क्लियर — सभी शर्तें पूरी"},
+    {t:"ट्रेड लाइसेंस",s:"नगर निगम · राज्य",n:"ऑटो-क्लियर — सभी शर्तें पूरी"},
+    {t:"उद्यम पंजीकरण",s:"MSME · केंद्र",n:"ऑटो-क्लियर — सभी शर्तें पूरी"}
+  ],
+  script:[
+    {k:"user",x:"मैं अपने गाँव के पास एक छोटा फूड स्टॉल खोलना चाहता हूँ। मुझे क्या करना होगा?"},
+    {k:"bot",x:"नमस्ते! मैं भारतमित्र हूँ। आपका FSSAI पंजीकरण, नगरपालिका ट्रेड लाइसेंस और उद्यम पंजीकरण — तीनों एक साथ कर दूँगा। पहले एक छोटा आधार सत्यापन।"},
+    {k:"card",title:"🪪 आधार सत्यापित",rows:[["👤","फेस ऑथेंटिकेशन","0.8 सेकंड में पूर्ण"]],note:"न पासवर्ड। न OTP टाइप करना।"},
+    {k:"audit",x:"<b>a3f9…c21d</b> — Aadhaar auth (face) · consent logged"},
+    {k:"bot",x:"सत्यापित। डिजिलॉकर से आपका विवरण ले लिया — कुछ अपलोड करने की ज़रूरत नहीं, ज़ेरॉक्स नहीं।"},
+    {k:"card",title:"📂 डिजिलॉकर से प्राप्त",rows:[["🪪","आधार","सत्यापित"],["🧾","पैन","जारी रिकॉर्ड"],["🏠","पता प्रमाण","जारी रिकॉर्ड"]],note:"जारी किए गए दस्तावेज़ ही — जालसाज़ी की गुंजाइश नहीं।"},
+    {k:"audit",x:"<b>7be1…09aa</b> — DigiLocker fetch (3 issued docs)"},
+    {k:"bot",x:"केंद्र + राज्य — 3 आवेदन अभी दाखिल कर रहा हूँ…"},
+    {k:"orch"},
+    {k:"bot",x:"हो गया! 4 मिनट 12 सेकंड में 3 अनुमतियाँ। न दफ़्तर के चक्कर, न बिचौलिए, रिश्वत माँगने की जगह ही नहीं। प्रमाणपत्र आपके डिजिलॉकर में सहेज दिए।"},
+    {k:"card",title:"🎉 3 अनुमतियाँ स्वीकृत",rows:[["✅","FSSAI बेसिक पंजीकरण","डीम्ड स्वीकृति"],["✅","नगरपालिका ट्रेड लाइसेंस","डीम्ड स्वीकृति"],["✅","उद्यम पंजीकरण","डीम्ड स्वीकृति"]],note:"शून्य मानव हस्तक्षेप — शर्तें पूरी, ऑटो-क्लियर।"},
+    {k:"audit",x:"<b>f00d…44b2</b> — 3 applications filed (Centre + State)"},
+    {k:"audit",x:"<b>91cc…7e30</b> — Deemed approval ×3 · zero human touch"},
+    {k:"audit",x:"<b>c5a2…1f9d</b> — Certificates issued to DigiLocker"}
+  ]
+},
+en:{
+  input:"Type or speak…",
+  steps:[
+    {t:"FSSAI Basic Registration",s:"Food Safety · Centre",n:"Auto-cleared — all criteria met"},
+    {t:"Trade Licence",s:"Municipal Corporation · State",n:"Auto-cleared — all criteria met"},
+    {t:"Udyam Registration",s:"MSME · Centre",n:"Auto-cleared — all criteria met"}
+  ],
+  script:[
+    {k:"user",x:"I want to start a small food stall near my village. What do I need?"},
+    {k:"bot",x:"Namaste! I'm BharatMitra. I'll handle your FSSAI registration, municipal trade licence, and Udyam registration together — one query, three departments. First, a quick Aadhaar verification."},
+    {k:"card",title:"🪪 Aadhaar verified",rows:[["👤","Face authentication","done in 0.8s"]],note:"No passwords. No OTP typing."},
+    {k:"audit",x:"<b>a3f9…c21d</b> — Aadhaar auth (face) · consent logged"},
+    {k:"bot",x:"Verified. I pulled your details from DigiLocker — nothing to upload, nothing to xerox."},
+    {k:"card",title:"📂 Fetched from DigiLocker",rows:[["🪪","Aadhaar","verified"],["🧾","PAN","issued record"],["🏠","Address proof","issued record"]],note:"Issued documents only — no forgery possible."},
+    {k:"audit",x:"<b>7be1…09aa</b> — DigiLocker fetch (3 issued docs)"},
+    {k:"bot",x:"Filing all 3 applications now — Centre + State…"},
+    {k:"orch"},
+    {k:"bot",x:"Done! All 3 approvals in 4 minutes 12 seconds. Zero office visits, zero intermediaries — nowhere left to ask for a bribe. Certificates are saved to your DigiLocker."},
+    {k:"card",title:"🎉 3 approvals granted",rows:[["✅","FSSAI Basic Registration","deemed approval"],["✅","Municipal Trade Licence","deemed approval"],["✅","Udyam Registration","deemed approval"]],note:"Zero human touch — criteria met, auto-cleared."},
+    {k:"audit",x:"<b>f00d…44b2</b> — 3 applications filed (Centre + State)"},
+    {k:"audit",x:"<b>91cc…7e30</b> — Deemed approval ×3 · zero human touch"},
+    {k:"audit",x:"<b>c5a2…1f9d</b> — Certificates issued to DigiLocker"}
+  ]
+}};
+let lang='te', timers=[];
+const chat=document.getElementById('chat'), stepsEl=document.getElementById('steps'),
+      auditEl=document.getElementById('audit'), fake=document.getElementById('fakeinput');
+function clearTimers(){timers.forEach(clearTimeout);timers=[]}
+function wait(ms){return new Promise(r=>{timers.push(setTimeout(r,ms))})}
+function scrollChat(){chat.scrollTop=chat.scrollHeight}
+function addMsg(cls,html){const d=document.createElement('div');d.className='msg '+cls;d.innerHTML=html;chat.appendChild(d);scrollChat();return d}
+function addCard(c){const d=document.createElement('div');d.className='cardmsg';
+  d.innerHTML=`<b style="color:var(--white)">${c.title}</b>`+c.rows.map(r=>
+    `<div class="row"><div class="ico">${r[0]}</div><div><b style="color:var(--white)">${r[1]}</b><br><small>${r[2]}</small></div></div>`).join('')+
+    `<small>${c.note}</small>`;chat.appendChild(d);scrollChat()}
+function addAudit(x){const d=document.createElement('div');d.className='aentry';d.innerHTML='⛓ '+x;auditEl.appendChild(d)}
+function renderSteps(){stepsEl.innerHTML=L[lang].steps.map((s,i)=>
+  `<div class="step" id="stp${i}"><div class="t"><span class="dot" id="dot${i}">○</span><span><b style="color:var(--white)">${s.t}</b><br><small style="color:var(--muted)">${s.s}</small></span><span class="st" id="stt${i}">queued</span></div><div class="n">${s.n}</div></div>`).join('')}
+async function runOrch(){
+  for(let i=0;i<3;i++){
+    const el=document.getElementById('stp'+i);el.classList.add('on');
+    document.getElementById('dot'+i).innerHTML='<span class="spinner"></span>';
+    document.getElementById('stt'+i).textContent='processing…';
+    await wait(1400);
+    el.classList.remove('on');el.classList.add('done');
+    document.getElementById('dot'+i).innerHTML='<span class="check">✔</span>';
+    document.getElementById('stt'+i).textContent='approved ✓';
+  }
+}
+async function play(){
+  clearTimers();chat.innerHTML='';auditEl.innerHTML='';renderSteps();
+  fake.textContent=L[lang].input;
+  await wait(600);
+  for(const s of L[lang].script){
+    if(s.k==='user'){addMsg('user',s.x);await wait(900)}
+    else if(s.k==='bot'){const t=document.createElement('div');t.className='typing';t.innerHTML='<span></span><span></span><span></span>';chat.appendChild(t);scrollChat();await wait(1100);t.remove();addMsg('bot',s.x);await wait(900)}
+    else if(s.k==='card'){addCard(s);await wait(1000)}
+    else if(s.k==='audit'){addAudit(s.x);await wait(500)}
+    else if(s.k==='orch'){await runOrch();await wait(600)}
+  }
+  addMsg('sys','✨ Demo complete — replay in another language, or read the full proposal below.');
+}
+document.querySelectorAll('.langbar button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.langbar button').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');lang=b.dataset.lang;play();
+}));
+document.getElementById('replay').addEventListener('click',play);
+const io=new IntersectionObserver(e=>{if(e[0].isIntersecting){play();io.disconnect()}},{threshold:.25});
+io.observe(document.getElementById('demo'));
+</script>
+</body>
+</html>
