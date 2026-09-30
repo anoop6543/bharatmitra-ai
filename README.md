@@ -1,60 +1,193 @@
-# BharatMitra AI 🇮🇳
+<p align="center">
+  <img src="social-poster.webp" alt="BharatMitra AI — One query. Every government service." width="520">
+</p>
 
-**One query. Every government service.**
+<h1 align="center">BharatMitra AI 🇮🇳</h1>
+<p align="center"><b>One query. Every government service.</b></p>
 
-A citizen concept for strengthening **India Stack** — inspired by the United States' launch of [America.gov](https://techcrunch.com/2026/09/29/can-a-chatbot-fix-the-government-maze-the-white-house-is-about-to-find-out/) (29 Sept 2026).
+<p align="center">
+  <a href="https://anoop6543.github.io/bharatmitra-ai/"><img src="https://img.shields.io/badge/🚀_live_demo-try_it-brightgreen?style=for-the-badge" alt="Live demo"></a>
+  <img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge" alt="MIT license">
+  <img src="https://img.shields.io/badge/PRs-welcome-orange?style=for-the-badge" alt="PRs welcome">
+  <img src="https://img.shields.io/badge/made_in-India-ff9933?style=for-the-badge" alt="Made in India">
+</p>
 
-> **BharatMitra AI** is a proposed national **Sovereign Intelligence (SI)** chatbot: a citizen speaks or types one query in any of 22+ languages, and the system *completes the work* — Aadhaar-verified, DigiLocker-powered, orchestrated across Central and State departments via extended NSWS APIs, with auto-clearance of routine cases. No forms. No office visits. No intermediaries. No bribes.
+<p align="center">
+  <a href="#-the-story">Story</a> ·
+  <a href="#-what-is-bharatmitra-ai">What it is</a> ·
+  <a href="#-live-interactive-demo">Demo</a> ·
+  <a href="#-architecture">Architecture</a> ·
+  <a href="#-americagov-vs-bharatmitra">vs America.gov</a> ·
+  <a href="#-roadmap">Roadmap</a> ·
+  <a href="#-references">References</a> ·
+  <a href="#-contributing">Contributing</a>
+</p>
 
-🌐 **Live interactive demo:** https://anoop6543.github.io/bharatmitra-ai/
+---
 
-## What's here
+## 📖 The story
 
-| Path | What it is |
-|---|---|
-| `index.html` | Interactive demo — trilingual (తెలుగు / हिन्दी / English) scripted chat showing one food-stall query fanning out to FSSAI + municipal + Udyam approvals, with live orchestration + hash-chained audit trail panels |
-| `assets/architecture.svg` | System architecture diagram (citizen → Bhashini → SI core → NSWS bus → Centre/State APIs, with audit + safety layers) |
-| `docs/bharatmitra-ai-proposal.pdf` | Full policy proposal addressed to the PMO (India), CMO Telangana, CMO Andhra Pradesh |
-| `docs/bharatmitra-ai-proposal.md` | Proposal source (Markdown) |
+On **29 September 2026**, the United States launched **[America.gov](https://techcrunch.com/2026/09/29/can-a-chatbot-fix-the-government-maze-the-white-house-is-about-to-find-out/)** — an AI chatbot unifying ~29,000 federal websites into one conversational "front door," backed by an executive order mandating agency integration. It is a landmark: the first time a major government has declared the chatbot *the* interface to the state.
 
-## The idea in 60 seconds
+But look closely, and the gaps are obvious:
 
-1. **Citizen speaks** — Telugu, Hindi, English… any scheduled language (Bhashini).
-2. **SI core understands** — sovereign model, trained & hosted in India (no foreign model in the loop).
-3. **One query fans out** — NSWS-style service bus orchestrates Central + State department APIs as a single workflow.
-4. **Identity & documents automatic** — Aadhaar e-KYC; records pulled as *issued* documents from DigiLocker.
-5. **Routine cases auto-clear** — criteria met → deemed approval within SLA. Humans handle only exceptions.
-6. **Everything audited** — hash-chained, tamper-evident trail; continuous SI safety monitoring (hallucination guards, red-teaming, human escalation).
+- **Information only.** It answers questions; it cannot file, renew, or track anything. Transactions arrive in 2027.
+- **Foreign brains.** It runs on Google's Gemini and xAI's Grok — commercial models outside government control.
+- **Three languages** of voice. **One level** of government. No answer to discretion, intermediaries, or corruption.
 
-## America.gov vs BharatMitra
+**India can leapfrog all of it — because India already owns the layers America.gov lacks.** Aadhaar's 1.4-billion identity base. DigiLocker's issued-document vault. UMANG's thousands of live services. Bhashini's 22-language voice infrastructure. The NSWS single-window API fabric. UPI's payment rails. No other country holds all of these in one hand.
 
-| | America.gov (USA, launched 29 Sept 2026) | BharatMitra AI (proposed) |
+This repo is the citizen's case for what India should build next — a working interactive demo, a system architecture, and a formal policy proposal.
+
+---
+
+## 💡 What is BharatMitra AI?
+
+**BharatMitra AI** is a proposed national **Sovereign Intelligence (SI)** chatbot for citizen services:
+
+> A citizen speaks or types **one query in any of 22+ languages**. The system **completes the work** — Aadhaar-verified, DigiLocker-powered, orchestrated across Central and State departments via extended NSWS APIs, with **auto-clearance of routine cases**. No forms. No office visits. No intermediaries. No bribes.
+
+### The six layers
+
+| # | Layer | What it does |
+|---|-------|--------------|
+| 1 | **SI core (sovereign)** | BharatGen-class model, trained & hosted in India. Full data residency — no foreign commercial model in the loop |
+| 2 | **Language (Bhashini × UMANG)** | Voice + text in all 22 scheduled languages; UMANG's service catalogue becomes conversational intents |
+| 3 | **Integration (extended NSWS bus)** | Central ministries + state departments expose standard APIs; one query fans out as a single cross-tier workflow |
+| 4 | **Identity (Aadhaar + DigiLocker)** | Risk-based e-KYC; documents auto-fetched as *issued* records — never uploaded, never forged |
+| 5 | **Automation engine** | Criteria fully met → deemed approval within SLA; humans handle only exceptions & appeals |
+| 6 | **Trust layer** | Hash-chained immutable audit trail + continuous SI safety monitoring (hallucination guards, red-teaming, human escalation) |
+
+### The ask (from the [full proposal](docs/bharatmitra-ai-proposal.pdf))
+
+1. **PMO / Government of India** — a national mandate establishing BharatMitra AI as the unified AI front door (India's answer to the US executive order, but transactional and sovereign from launch).
+2. **Telangana & Andhra Pradesh** — sign on as the two pilot states proving centre-state orchestration first.
+3. **MeitY** — constitute the SI safety board; publish API, audit, and auto-clearance standards.
+
+---
+
+## 🖥 Live interactive demo
+
+**👉 https://anoop6543.github.io/bharatmitra-ai/**
+
+No backend — so the frontend carries the full vision. Try these:
+
+1. **🎙 Speak your query** — tap the mic and talk; the demo runs your words through the whole flow (Chrome recommended).
+2. **🔊 Hear it reply** — toggle voice replies; the assistant speaks back in Telugu, Hindi, or English via your browser's TTS.
+3. **🔀 Switch scenarios** — food-stall licences (Centre + State orchestration), income certificate (record auto-matching), DL renewal (UPI fee + issuance).
+4. **🌐 Switch languages** — తెలుగు / हिन्दी / English; the service graph is identical in all three.
+5. **⚙ Watch the machinery** — the "behind the scenes" panel animates every API step, and the hash-chained audit trail builds live.
+
+Plus: the complete 12-feature vision grid, the six-layer explainer, the architecture diagram, an 18-month roadmap, and the head-to-head comparison — all in one page.
+
+---
+
+## 🏗 Architecture
+
+<p align="center"><img src="assets/architecture.svg" alt="BharatMitra AI system architecture" width="900"></p>
+
+**Flow:** Citizen (voice/text, 22+ langs) → Bhashini language layer → BharatMitra SI core (sovereign, India-hosted) → NSWS service bus → Centre dept APIs / State dept APIs / Aadhaar + DigiLocker → auto-clearance → certificates to DigiLocker. Underneath everything: the **immutable audit trail** and **SI safety monitoring**.
+
+---
+
+## 🆚 America.gov vs BharatMitra
+
+| Dimension | America.gov (USA, launched 29 Sept 2026) | BharatMitra AI (proposed) |
 |---|---|---|
-| Capability | Information only; transactions from 2027 | **Transactional from day one** |
-| Models | Gemini + Grok (foreign, commercial) | **Sovereign, hosted in India** |
-| Languages | 3 (voice) | **22+** |
-| Identity | Login.gov (future) | **Aadhaar (universal today)** |
-| Documents | Citizen uploads PDFs | **DigiLocker auto-fetch** |
-| Integration | Federal only | **Centre + States + local** |
-| Corruption | Not addressed | **Auto-clearance + immutable audit** |
+| Capability at launch | Information only; transactions from 2027 | **Transactional from day one** |
+| Intelligence | Foreign commercial models (Gemini, Grok) | **Sovereign Intelligence, hosted in India** |
+| Languages | 3 (voice) | **22+ scheduled languages** |
+| Identity | Login.gov (future integration) | **Aadhaar + national SSO (universal today)** |
+| Documents | Citizen uploads PDFs | **DigiLocker issued docs, auto-fetched** |
+| Integration | Federal agencies only | **Centre + States + local via NSWS APIs** |
+| Discretion removal | Not addressed | **Auto-clearance + immutable audit** |
+| Safety | Hallucination concerns in press coverage | **SI safety monitoring, red-teaming, human escalation** |
 
-## The ask
+---
 
-- **PMO / Govt of India** — a national mandate establishing BharatMitra AI as the unified AI front door (India's answer to the US executive order, but transactional and sovereign from launch).
-- **Telangana & Andhra Pradesh** — sign on as the two pilot states proving centre-state orchestration first.
-- **MeitY** — constitute the SI safety board; publish API, audit and auto-clearance standards.
+## 🗺 Roadmap — 18 months to national rollout
 
-## Run locally
+| Phase | Window | Milestones |
+|---|---|---|
+| **0 — Mandate & standards** | Mo 1–3 | National directive; API + audit-trail standards; SI safety board constituted |
+| **1 — Core + pilots** | Mo 4–9 | SI core trained & hardened; Telugu/Hindi/English conversational layer; TG & AP onboard 10 high-volume services each |
+| **2 — Scale** | Mo 10–15 | All 22 scheduled languages; 500+ services; auto-clearance rules published per department |
+| **3 — National rollout** | Mo 16–18 | All states onboarded; in-chat grievance & appeal loop; public SLA + bribe-report dashboard |
 
-No build step — it's static. Open `index.html` in a browser, or serve it:
+---
 
-```bash
-python3 -m http.server 8000
-# → http://localhost:8000
+## 📁 What's in this repo
+
+```
+bharatmitra-ai/
+├── index.html                  # Interactive demo (static — no build step)
+├── assets/
+│   └── architecture.svg        # System architecture diagram
+├── docs/
+│   ├── bharatmitra-ai-proposal.pdf   # Formal policy proposal (PMO / TG / AP)
+│   └── bharatmitra-ai-proposal.md    # Proposal source
+├── social-poster.webp          # Social media poster
+├── README.md
+└── LICENSE
 ```
 
-## Status
+**Run locally:** no build step — open `index.html`, or `python3 -m http.server 8000`.
 
-💡 Citizen concept demo. All data simulated. Not affiliated with the Government of India.
+---
 
-Prepared by **Viswa Anoop Nerella** · September 2026
+## 📚 References
+
+This project builds on the work of many others. Every substantive claim is cited; the demo code itself is hand-written for this repo.
+
+### America.gov — launch reporting (29–30 Sept 2026)
+
+1. TechCrunch — ["Can a chatbot fix the government maze? The White House is about to find out"](https://techcrunch.com/2026/09/29/can-a-chatbot-fix-the-government-maze-the-white-house-is-about-to-find-out/) (29 Sept 2026) — launch announcement; Gemini + Grok models; Phase 2 transactions in 2027.
+2. Healthcare IT News — ["Trump launches AI-driven digital front door for the federal government"](https://www.healthcareitnews.com/news/trump-launches-ai-driven-digital-front-door-federal-government) (Sept 2026) — GSA operation, National Design Studio build, executive order establishing the "unified digital front door."
+3. SecurityBoulevard — ["America.gov Explained: What It Is, How to Use It, and What Comes Next"](https://securityboulevard.com/2026/09/america-gov-explained-what-it-is-how-to-use-it-and-what-comes-next/) (Sept 2026) — launch scope (29,000 sites), Login.gov integration plan, passport timeline (Dec 2026), IRS/national-security exclusions.
+4. The News — ["US launches America.gov, an AI chatbot for navigating federal services"](https://www.thenews.com.pk/amp/1418146-us-launches-americagov-an-ai-chatbot-for-navigating-federal-services) (Sept 2026) — voice in English/Spanish/French, PDF upload Q&A, information-only limits at launch.
+5. Herald Business — ["Trump launches US government AI chatbot site, calls it 'preview' of superintelligence"](https://biz.heraldcorp.com/article/10888252) (Sept 2026) — WSJ-sourced detail on planned transactional expansion.
+6. Executive Order — *Streamlining Access to Government Services Through America.gov* (29 Sept 2026), as reported in (2) and (3).
+
+### India Stack & national programmes
+
+7. UIDAI — Aadhaar identity platform — [uidai.gov.in](https://uidai.gov.in)
+8. DigiLocker — issued-document vault — [digilocker.gov.in](https://www.digilocker.gov.in)
+9. UMANG — Unified Mobile Application for New-age Governance — [web.umang.gov.in](https://web.umang.gov.in)
+10. Bhashini — National Language Translation Mission — [bhashini.gov.in](https://bhashini.gov.in)
+11. NSWS — National Single Window System — [nsws.gov.in](https://www.nsws.gov.in)
+12. Digital India programme — [digitalindia.gov.in](https://www.digitalindia.gov.in)
+13. The Digital Personal Data Protection Act, 2023 (MeitY) — consent-based data governance frame.
+14. BharatGen — Department of Science & Technology sovereign AI initiative (June 2026) — the "SI core" reference model for this proposal.
+15. NPCI / UPI — [npci.org.in](https://www.npci.org.in) — payment rails referenced for in-chat fee collection.
+16. ONDC — [ondc.org](https://ondc.org) — open-protocol inspiration for the service-bus design.
+
+### This repo's own documents
+
+17. *BharatMitra AI: A Sovereign, Transactional National Single-Window for India's Citizen Services* — policy proposal to the PMO (India), CMO Telangana, CMO Andhra Pradesh (30 Sept 2026) — [`docs/bharatmitra-ai-proposal.pdf`](docs/bharatmitra-ai-proposal.pdf).
+
+> If we missed a citation or misrepresented a source, please open an issue — crediting correctly matters.
+
+---
+
+## 🤝 Contributing
+
+Ideas, corrections, and better demo scenarios are welcome:
+
+- **New scenario?** The demo engine is data-driven — add a language-keyed entry to the `T` object in `index.html` (query, intro, steps, cert) and a chip button. No backend needed.
+- **Better Telugu/Hindi?** Native speakers: please PR fixes to the demo strings.
+- **Design polish?** It's one static file — easy to improve.
+
+---
+
+## 📄 License
+
+MIT — see [LICENSE](LICENSE). The proposal text may be shared and quoted freely with attribution.
+
+## ⚖️ Disclaimer
+
+Citizen concept demo. Not affiliated with the Government of India. All identities, documents, departments, and transactions in the demo are simulated. Budget figures in the proposal are the author's estimates.
+
+---
+
+<p align="center">Prepared by <b>Viswa Anoop Nerella</b> · September 2026 · Hyderabad, India 🇮🇳</p>
+<p align="center"><i>America launched the front door yesterday. India can open a better one.</i></p>
